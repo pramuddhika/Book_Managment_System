@@ -17,8 +17,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="department" class="form-label">Author Name:</label>
-            <input type="text" class="form-control" id="department" name="department" value="<%= employee.getElementsByTagName("DepartmentName").item(0).getTextContent() %>">
+            <label for="author" class="form-label">Author Name:</label>
+            <input type="text" class="form-control" id="author" name="author" value="<%= employee.getElementsByTagName("AuthorName").item(0).getTextContent() %>">
         </div>
 
         <div class="mb-3">
@@ -32,11 +32,11 @@
     <script>
         function validateForm() {
             var name = document.getElementById('name').value;
-            var department = document.getElementById('department').value;
+            var author = document.getElementById('author').value;
             var price = document.getElementById('price').value;
 
             // Perform your validation logic here
-            if (name.trim() === '' || department.trim() === '' || price.trim() === '') {
+            if (name.trim() === '' || author.trim() === '' || price.trim() === '') {
                 alert('All fields must be filled out');
                 return false;
             }

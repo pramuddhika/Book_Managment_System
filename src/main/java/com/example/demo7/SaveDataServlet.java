@@ -30,7 +30,7 @@ public class SaveDataServlet extends HttpServlet {
         try {
             // Retrieve user input from request parameters
             String employeeName = request.getParameter("employeeName");
-            String departmentName = request.getParameter("departmentName");
+            String authorName = request.getParameter("authorName");
             String priceValue = request.getParameter("price");
 
             // Generate a unique ID for the employee
@@ -64,9 +64,9 @@ public class SaveDataServlet extends HttpServlet {
             nameElement.appendChild(doc.createTextNode(employeeName));
             employeeElement.appendChild(nameElement);
 
-            Element departmentNameElement = doc.createElement("DepartmentName");
-            departmentNameElement.appendChild(doc.createTextNode(departmentName));
-            employeeElement.appendChild(departmentNameElement);
+            Element authorNameElement = doc.createElement("AuthorName");
+            authorNameElement.appendChild(doc.createTextNode(authorName));
+            employeeElement.appendChild(authorNameElement);
 
              // price
             Element priceElement = doc.createElement("Price");

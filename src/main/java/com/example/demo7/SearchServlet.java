@@ -91,11 +91,11 @@ public class SearchServlet extends HttpServlet {
         // Parse other elements
         String id = employeeElement.getAttribute("id");
         String name = getTextContent(employeeElement, "Name");
-        String departmentName = getTextContent(employeeElement, "DepartmentName");
+        String authorName = getTextContent(employeeElement, "AuthorName");
 
         int priceValue = Integer.parseInt(getTextContent(employeeElement, "Price"));
 
-        return new Employee(id, name, departmentName,priceValue);
+        return new Employee(id, name, authorName,priceValue);
     }
 
     private String getAttributeValue(Element parentElement, String childTagName, String attributeName) {

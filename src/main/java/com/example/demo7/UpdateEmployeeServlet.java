@@ -26,7 +26,7 @@ public class UpdateEmployeeServlet extends HttpServlet {
         // Get the updated employee details from the request parameters
         String employeeId = request.getParameter("employeeId");
         String name = request.getParameter("name");
-        String department = request.getParameter("department");
+        String author = request.getParameter("author");
         int price = Integer.parseInt(request.getParameter("price"));
 
         // Parse the XML file
@@ -62,7 +62,7 @@ public class UpdateEmployeeServlet extends HttpServlet {
         if (employeeElement != null) {
             // Update the employee details in the XML element
             employeeElement.getElementsByTagName("Name").item(0).setTextContent(name);
-            employeeElement.getElementsByTagName("DepartmentName").item(0).setTextContent(department);
+            employeeElement.getElementsByTagName("AuthorName").item(0).setTextContent(author);
 
             employeeElement.getElementsByTagName("Price").item(0).setTextContent(String.valueOf(price));
 

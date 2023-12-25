@@ -4,16 +4,16 @@ package com.example.demo7;
 public class Employee {
     private String id;
     private String name;
-    private String departmentName;
+    private String authorName;
 
     private int priceValue;
 
     // Constructors, getters, setters, etc.
 
-    public Employee(String id,String name, String departmentName, int priceValue) {
+    public Employee(String id,String name, String authorName, int priceValue) {
         this.id = id;
         this.name = name;
-        this.departmentName = departmentName;
+        this.authorName = authorName;
         this.priceValue = priceValue;
     }
 
@@ -40,12 +40,12 @@ public class Employee {
         this.name = name;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setAuthorName(String departmentName) {
+        this.authorName = authorName;
     }
 
     public int getPriceValue() {

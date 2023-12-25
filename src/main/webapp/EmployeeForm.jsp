@@ -15,8 +15,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="departmentName" class="form-label">Author Name:</label>
-            <input type="text" class="form-control" id="departmentName" name="departmentName" required>
+            <label for="authorName" class="form-label">Author Name:</label>
+            <input type="text" class="form-control" id="authorName" name="authorName" required>
             <div id="departmentNameError" class="text-danger"></div>
         </div>
 
@@ -55,7 +55,7 @@
 
         // Reset error messages
         document.getElementById("employeeNameError").innerHTML = "";
-        document.getElementById("departmentNameError").innerHTML = "";
+        document.getElementById("authorNameError").innerHTML = "";
         document.getElementById("priceError").innerHTML = "";
 
         // Validate employeeName
@@ -65,10 +65,10 @@
             isValid = false;
         }
 
-        // Validate departmentName
-        var departmentName = document.getElementById("departmentName").value;
-        if (departmentName.trim() === "") {
-            document.getElementById("departmentNameError").innerHTML = "Department Name is required.";
+        // Validate authorName
+        var authorName = document.getElementById("authorName").value;
+        if (authorName.trim() === "") {
+            document.getElementById("authorNameError").innerHTML = "Author Name is required.";
             isValid = false;
         }
 

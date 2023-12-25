@@ -40,11 +40,11 @@ public class EmployeeDataServlet extends HttpServlet {
 
             String id = employeeElement.getAttribute("id");
             String name = employeeElement.getElementsByTagName("Name").item(0).getTextContent();
-            String department = employeeElement.getElementsByTagName("DepartmentName").item(0).getTextContent();
+            String author = employeeElement.getElementsByTagName("AuthorName").item(0).getTextContent();
 
             int price = Integer.parseInt(employeeElement.getElementsByTagName("Price").item(0).getTextContent());
 
-            Employee employee = new Employee(id, name, department, price);
+            Employee employee = new Employee(id, name, author, price);
             employees.add(employee);
         }
 

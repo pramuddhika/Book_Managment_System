@@ -39,7 +39,7 @@
             <tr>
                 <td><%= employee.getId() %></td>
                 <td><%= employee.getName() %></td>
-                <td><%= employee.getDepartmentName() %></td>
+                <td><%= employee.getAuthorName() %></td>
                 <td><%= employee.getPriceValue() %></td>
                 <td>
                     <form action="EditEmployeeServlet" method="post" style="display: inline-block;">
