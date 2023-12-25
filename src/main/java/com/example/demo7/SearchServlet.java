@@ -23,13 +23,7 @@ public class SearchServlet extends HttpServlet {
     private List<Employee> allEmployees; // List to store all employees
 
     @Override
-//    public void init() throws ServletException {
-//        super.init();
-//        // Initialize the list of all employees during servlet initialization
-//        allEmployees = readDataFromXML(getServletContext().getRealPath("/") + "employeeData.xml", "");
-//        getServletContext().setAttribute("allEmployees", allEmployees);
-//
-//    }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
