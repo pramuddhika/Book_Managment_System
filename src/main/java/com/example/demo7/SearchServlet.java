@@ -29,7 +29,7 @@ public class SearchServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         //request?
-       String employeeName = request.getParameter("employeeName");
+       String employeeName = request.getParameter("bookName");
 
             try {
                 // Specify the path to your XML file

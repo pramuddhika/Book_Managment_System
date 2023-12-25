@@ -79,7 +79,7 @@ public class DeleteBookServlet extends HttpServlet {
             response.sendRedirect("http://localhost:8090/demo7_war_exploded/EmployeeDataServlet");
         } else {
             // Handle the case where the employee with the specified ID was not found
-            response.sendRedirect("EmployeeData.jsp?error=EmployeeNotFound");
+            response.sendRedirect("EmployeeData.jsp?error=BookNotFound");
         }
     }
 }

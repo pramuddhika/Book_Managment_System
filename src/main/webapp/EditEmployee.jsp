@@ -8,7 +8,7 @@
         Element employee = (Element) request.getAttribute("employee");
         if (employee != null) {
     %>
-    <form action="UpdateEmployeeServlet" method="post" onsubmit="return validateForm()">
+    <form action="UpdateBookServlet" method="post" onsubmit="return validateForm()">
         <input type="hidden" name="employeeId" value="<%= employee.getAttribute("id") %>">
 
         <div class="mb-3">

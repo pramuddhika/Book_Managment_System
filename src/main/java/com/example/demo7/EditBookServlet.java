@@ -61,7 +61,7 @@ public class EditBookServlet extends HttpServlet {
             request.getRequestDispatcher("EditEmployee.jsp").forward(request, response);
         } else {
             // Handle the case where the employee with the specified ID was not found
-            response.sendRedirect("EmployeeData.jsp?error=EmployeeNotFound");
+            response.sendRedirect("EmployeeData.jsp?error=BookNotFound");
         }    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

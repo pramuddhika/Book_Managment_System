@@ -20,8 +20,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
-@WebServlet("/UpdateEmployeeServlet")
-public class UpdateEmployeeServlet extends HttpServlet {
+@WebServlet("/UpdateBookServlet")
+public class UpdateBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Get the updated employee details from the request parameters
         String employeeId = request.getParameter("employeeId");
