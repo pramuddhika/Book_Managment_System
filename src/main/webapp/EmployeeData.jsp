@@ -6,7 +6,7 @@
 <%@ include file="Header.jsp" %>
 
 <div class="container mt-4">
-    <h2>Employee List</h2>
+    <h2>Book List</h2>
 
     <%
         List<Employee> employees = (List<Employee>) request.getAttribute("employees");
@@ -17,8 +17,8 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Department</th>
-            <th>Salary</th>
+            <th>Author Name</th>
+            <th>Price</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -30,7 +30,7 @@
             <td><%= employee.getId() %></td>
             <td><%= employee.getName() %></td>
             <td><%= employee.getDepartmentName() %></td>
-            <td><%= employee.getSalaryValue() %></td>
+            <td><%= employee.getPriceValue() %></td>
             <td>
                 <form action="EditEmployeeServlet" method="post" style="display: inline-block;">
                     <input type="hidden" name="employeeId" value="<%= employee.getId() %>">
@@ -50,7 +50,7 @@
     <%
     } else {
     %>
-    <p class="mt-3">No employee data available.</p>
+    <p class="mt-3">No book data available.</p>
     <%
         }
     %>

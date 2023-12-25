@@ -2,7 +2,7 @@
 <%@ include file="Header.jsp" %>
 
 <div class="container mt-4">
-    <h1>Edit Employee</h1>
+    <h1>Edit Book</h1>
 
     <%
         Element employee = (Element) request.getAttribute("employee");
@@ -17,13 +17,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="department" class="form-label">Department:</label>
+            <label for="department" class="form-label">Author Name:</label>
             <input type="text" class="form-control" id="department" name="department" value="<%= employee.getElementsByTagName("DepartmentName").item(0).getTextContent() %>">
         </div>
 
         <div class="mb-3">
-            <label for="salary" class="form-label">Salary:</label>
-            <input type="number" class="form-control" id="salary" name="salary" value="<%= employee.getElementsByTagName("Salary").item(0).getTextContent() %>">
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" class="form-control" id="price" name="price" value="<%= employee.getElementsByTagName("Price").item(0).getTextContent() %>">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
@@ -33,10 +33,10 @@
         function validateForm() {
             var name = document.getElementById('name').value;
             var department = document.getElementById('department').value;
-            var salary = document.getElementById('salary').value;
+            var price = document.getElementById('price').value;
 
             // Perform your validation logic here
-            if (name.trim() === '' || department.trim() === '' || salary.trim() === '') {
+            if (name.trim() === '' || department.trim() === '' || price.trim() === '') {
                 alert('All fields must be filled out');
                 return false;
             }
@@ -48,7 +48,7 @@
     <%
     } else {
     %>
-    <p>Error: Employee details not found.</p>
+    <p>Error: Book details not found.</p>
     <%
         }
     %>

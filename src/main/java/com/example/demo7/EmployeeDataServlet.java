@@ -42,9 +42,9 @@ public class EmployeeDataServlet extends HttpServlet {
             String name = employeeElement.getElementsByTagName("Name").item(0).getTextContent();
             String department = employeeElement.getElementsByTagName("DepartmentName").item(0).getTextContent();
 
-            int salary = Integer.parseInt(employeeElement.getElementsByTagName("Salary").item(0).getTextContent());
+            int price = Integer.parseInt(employeeElement.getElementsByTagName("Price").item(0).getTextContent());
 
-            Employee employee = new Employee(id, name, department, salary);
+            Employee employee = new Employee(id, name, department, price);
             employees.add(employee);
         }
 

@@ -6,15 +6,15 @@ public class Employee {
     private String name;
     private String departmentName;
 
-    private int salaryValue;
+    private int priceValue;
 
     // Constructors, getters, setters, etc.
 
-    public Employee(String id,String name, String departmentName, int salaryValue) {
+    public Employee(String id,String name, String departmentName, int priceValue) {
         this.id = id;
         this.name = name;
         this.departmentName = departmentName;
-        this.salaryValue = salaryValue;
+        this.priceValue = priceValue;
     }
 
     public Employee() {
@@ -48,11 +48,11 @@ public class Employee {
         this.departmentName = departmentName;
     }
 
-    public int getSalaryValue() {
-        return salaryValue;
+    public int getPriceValue() {
+        return priceValue;
     }
 
-    public void setSalaryValue(int salaryValue) {
-        this.salaryValue = salaryValue;
+    public void setPriceValue(int salaryValue) {
+        this.priceValue = priceValue;
     }
 }

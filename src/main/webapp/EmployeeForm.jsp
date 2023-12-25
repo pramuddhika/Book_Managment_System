@@ -15,15 +15,15 @@
         </div>
 
         <div class="mb-3">
-            <label for="departmentName" class="form-label">Department Name:</label>
+            <label for="departmentName" class="form-label">Author Name:</label>
             <input type="text" class="form-control" id="departmentName" name="departmentName" required>
             <div id="departmentNameError" class="text-danger"></div>
         </div>
 
        <div class="mb-3">
-            <label for="salary" class="form-label">Salary:</label>
-            <input type="number" class="form-control" id="salary" name="salary" required>
-            <div id="salaryError" class="text-danger"></div>
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+            <div id="priceError" class="text-danger"></div>
         </div>
 
         <button type="submit" class="btn btn-primary">Save</button>
@@ -56,7 +56,7 @@
         // Reset error messages
         document.getElementById("employeeNameError").innerHTML = "";
         document.getElementById("departmentNameError").innerHTML = "";
-        document.getElementById("salaryError").innerHTML = "";
+        document.getElementById("priceError").innerHTML = "";
 
         // Validate employeeName
         var employeeName = document.getElementById("employeeName").value;
@@ -72,10 +72,10 @@
             isValid = false;
         }
 
-        // Validate salary
-        var salary = document.getElementById("salary").value;
-        if (isNaN(salary) || parseFloat(salary) <= 0) {
-            document.getElementById("salaryError").innerHTML = "Salary must be a positive number.";
+        // Validate price
+        var price = document.getElementById("price").value;
+        if (isNaN(price) || parseFloat(price) <= 0) {
+            document.getElementById("priceError").innerHTML = "Price must be a positive number.";
             isValid = false;
         }
 

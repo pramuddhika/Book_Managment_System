@@ -27,7 +27,7 @@ public class UpdateEmployeeServlet extends HttpServlet {
         String employeeId = request.getParameter("employeeId");
         String name = request.getParameter("name");
         String department = request.getParameter("department");
-        int salary = Integer.parseInt(request.getParameter("salary"));
+        int price = Integer.parseInt(request.getParameter("price"));
 
         // Parse the XML file
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -64,7 +64,7 @@ public class UpdateEmployeeServlet extends HttpServlet {
             employeeElement.getElementsByTagName("Name").item(0).setTextContent(name);
             employeeElement.getElementsByTagName("DepartmentName").item(0).setTextContent(department);
 
-            employeeElement.getElementsByTagName("Salary").item(0).setTextContent(String.valueOf(salary));
+            employeeElement.getElementsByTagName("Price").item(0).setTextContent(String.valueOf(price));
 
             // Save the updated XML file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

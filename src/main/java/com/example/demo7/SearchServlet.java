@@ -47,7 +47,7 @@ public class SearchServlet extends HttpServlet {
 
             } catch (Exception e) {
                 e.printStackTrace();
-                System.out.println("Error retrieving employee data.");
+                System.out.println("Error retrieving book data.");
                 // Handle error
             }
 
@@ -93,9 +93,9 @@ public class SearchServlet extends HttpServlet {
         String name = getTextContent(employeeElement, "Name");
         String departmentName = getTextContent(employeeElement, "DepartmentName");
 
-        int salaryValue = Integer.parseInt(getTextContent(employeeElement, "Salary"));
+        int priceValue = Integer.parseInt(getTextContent(employeeElement, "Price"));
 
-        return new Employee(id, name, departmentName,salaryValue);
+        return new Employee(id, name, departmentName,priceValue);
     }
 
     private String getAttributeValue(Element parentElement, String childTagName, String attributeName) {

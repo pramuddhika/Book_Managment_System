@@ -10,7 +10,7 @@
             <input type="text" class="form-control" id="employeeName" name="employeeName">
             <div id="employeeNameError" class="text-danger"></div>
         </div>
-        <button class="btn btn-primary" type="submit">Search Employee</button>
+        <button class="btn btn-primary" type="submit">Search Book</button>
     </form>
 
     <!-- Display Search Results -->
@@ -25,9 +25,10 @@
         <table class="table">
             <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
-                <th>Department</th>
-                <th>Salary</th>
+                <th>Author Name</th>
+                <th>Price</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -39,7 +40,7 @@
                 <td><%= employee.getId() %></td>
                 <td><%= employee.getName() %></td>
                 <td><%= employee.getDepartmentName() %></td>
-                <td><%= employee.getSalaryValue() %></td>
+                <td><%= employee.getPriceValue() %></td>
                 <td>
                     <form action="EditEmployeeServlet" method="post" style="display: inline-block;">
                         <input type="hidden" name="employeeId" value="<%= employee.getId() %>">
@@ -59,7 +60,7 @@
         <%
         } else {
         %>
-        <p class="mt-3">No employees found.</p>
+        <p class="mt-3">No book found.</p>
         <%
             }
         %>
