@@ -5,7 +5,7 @@
 <%@ include file="Header.jsp" %>
 
 <div class="container mt-5">
-    <h2 class="mb-4">Employee Information Form</h2>
+    <h2 class="mb-4">Book Information Form</h2>
 
     <form action="SaveDataServlet" method="post" onsubmit="return validateForm()">
         <div class="mb-3">
@@ -20,28 +20,14 @@
             <div id="departmentNameError" class="text-danger"></div>
         </div>
 
-        <div class="mb-3">
-            <label for="addressType" class="form-label">Address Type:</label>
-            <select class="form-select" id="addressType" name="addressType" required>
-                <option value="permanent">Permanent</option>
-                <option value="temporary">Temporary</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="address" class="form-label">Address:</label>
-            <input type="text" class="form-control" id="address" name="address" required>
-            <div id="addressError" class="text-danger"></div>
-        </div>
-
-        <div class="mb-3">
+       <div class="mb-3">
             <label for="salary" class="form-label">Salary:</label>
             <input type="number" class="form-control" id="salary" name="salary" required>
             <div id="salaryError" class="text-danger"></div>
         </div>
 
         <button type="submit" class="btn btn-primary">Save</button>
-        <a href="SearchPage.jsp" class="btn btn-warning">Search Employee</a>
+        <a href="SearchPage.jsp" class="btn btn-warning">Search Book</a>
     </form>
 
     <div class="mt-3">
@@ -70,7 +56,6 @@
         // Reset error messages
         document.getElementById("employeeNameError").innerHTML = "";
         document.getElementById("departmentNameError").innerHTML = "";
-        document.getElementById("addressError").innerHTML = "";
         document.getElementById("salaryError").innerHTML = "";
 
         // Validate employeeName
@@ -84,13 +69,6 @@
         var departmentName = document.getElementById("departmentName").value;
         if (departmentName.trim() === "") {
             document.getElementById("departmentNameError").innerHTML = "Department Name is required.";
-            isValid = false;
-        }
-
-        // Validate address
-        var address = document.getElementById("address").value;
-        if (address.trim() === "") {
-            document.getElementById("addressError").innerHTML = "Address is required.";
             isValid = false;
         }
 

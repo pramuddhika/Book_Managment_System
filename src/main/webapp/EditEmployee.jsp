@@ -22,19 +22,6 @@
         </div>
 
         <div class="mb-3">
-            <label for="addressType" class="form-label">Address Type:</label>
-            <select class="form-select" id="addressType" name="addressType">
-                <option value="Permanent" <%= employee.getElementsByTagName("address").item(0).getAttributes().getNamedItem("Type").getTextContent().equals("Permanent") ? "selected" : "" %>>Permanent</option>
-                <option value="Temporary" <%= employee.getElementsByTagName("address").item(0).getAttributes().getNamedItem("Type").getTextContent().equals("Temporary") ? "selected" : "" %>>Temporary</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="address" class="form-label">Address:</label>
-            <input type="text" class="form-control" id="address" name="address" value="<%= employee.getElementsByTagName("address").item(0).getAttributes().getNamedItem("Address").getTextContent() %>">
-        </div>
-
-        <div class="mb-3">
             <label for="salary" class="form-label">Salary:</label>
             <input type="number" class="form-control" id="salary" name="salary" value="<%= employee.getElementsByTagName("Salary").item(0).getTextContent() %>">
         </div>
@@ -46,11 +33,10 @@
         function validateForm() {
             var name = document.getElementById('name').value;
             var department = document.getElementById('department').value;
-            var address = document.getElementById('address').value;
             var salary = document.getElementById('salary').value;
 
             // Perform your validation logic here
-            if (name.trim() === '' || department.trim() === '' || address.trim() === '' || salary.trim() === '') {
+            if (name.trim() === '' || department.trim() === '' || salary.trim() === '') {
                 alert('All fields must be filled out');
                 return false;
             }

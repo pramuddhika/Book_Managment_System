@@ -92,13 +92,10 @@ public class SearchServlet extends HttpServlet {
         String id = employeeElement.getAttribute("id");
         String name = getTextContent(employeeElement, "Name");
         String departmentName = getTextContent(employeeElement, "DepartmentName");
-        String addressType = getAttributeValue(employeeElement, "address", "Type");
-        // created a system out to find the error
-        System.out.println("Address Type: " + addressType);
-        String address = getAttributeValue(employeeElement, "address", "Address");
+
         int salaryValue = Integer.parseInt(getTextContent(employeeElement, "Salary"));
 
-        return new Employee(id, name, departmentName, addressType,address,salaryValue);
+        return new Employee(id, name, departmentName,salaryValue);
     }
 
     private String getAttributeValue(Element parentElement, String childTagName, String attributeName) {

@@ -27,8 +27,6 @@ public class UpdateEmployeeServlet extends HttpServlet {
         String employeeId = request.getParameter("employeeId");
         String name = request.getParameter("name");
         String department = request.getParameter("department");
-        String addressType = request.getParameter("addressType");
-        String address = request.getParameter("address");
         int salary = Integer.parseInt(request.getParameter("salary"));
 
         // Parse the XML file
@@ -65,10 +63,6 @@ public class UpdateEmployeeServlet extends HttpServlet {
             // Update the employee details in the XML element
             employeeElement.getElementsByTagName("Name").item(0).setTextContent(name);
             employeeElement.getElementsByTagName("DepartmentName").item(0).setTextContent(department);
-
-            NodeList addressNodes = employeeElement.getElementsByTagName("address");
-            addressNodes.item(0).getAttributes().getNamedItem("Type").setTextContent(addressType);
-            addressNodes.item(0).getAttributes().getNamedItem("Address").setTextContent(address);
 
             employeeElement.getElementsByTagName("Salary").item(0).setTextContent(String.valueOf(salary));
 

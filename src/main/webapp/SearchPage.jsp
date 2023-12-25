@@ -27,8 +27,6 @@
             <tr>
                 <th>Name</th>
                 <th>Department</th>
-                <th>Address Type</th>
-                <th>Address</th>
                 <th>Salary</th>
                 <th>Actions</th>
             </tr>
@@ -41,8 +39,6 @@
                 <td><%= employee.getId() %></td>
                 <td><%= employee.getName() %></td>
                 <td><%= employee.getDepartmentName() %></td>
-                <td><%= employee.getAddressType() %></td>
-                <td><%= employee.getAddress() %></td>
                 <td><%= employee.getSalaryValue() %></td>
                 <td>
                     <form action="EditEmployeeServlet" method="post" style="display: inline-block;">

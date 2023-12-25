@@ -31,8 +31,6 @@ public class SaveDataServlet extends HttpServlet {
             // Retrieve user input from request parameters
             String employeeName = request.getParameter("employeeName");
             String departmentName = request.getParameter("departmentName");
-            String addressType = request.getParameter("addressType");
-            String address = request.getParameter("address");
             String salaryValue = request.getParameter("salary");
 
             // Generate a unique ID for the employee
@@ -70,16 +68,7 @@ public class SaveDataServlet extends HttpServlet {
             departmentNameElement.appendChild(doc.createTextNode(departmentName));
             employeeElement.appendChild(departmentNameElement);
 
-            // Addresses
-            Element addressesElement = doc.createElement("addresses");
-            employeeElement.appendChild(addressesElement);
-
-            Element addressElement = doc.createElement("address");
-            addressElement.setAttribute("Type", addressType);
-            addressElement.setAttribute("Address", address);
-            addressesElement.appendChild(addressElement);
-
-            // Salary
+             // Salary
             Element salaryElement = doc.createElement("Salary");
             salaryElement.appendChild(doc.createTextNode(salaryValue));
             employeeElement.appendChild(salaryElement);
