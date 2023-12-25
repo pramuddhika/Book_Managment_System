@@ -29,7 +29,7 @@ public class SaveDataServlet extends HttpServlet {
 
         try {
             // Retrieve user input from request parameters
-            String employeeName = request.getParameter("employeeName");
+            String bookName = request.getParameter("bookName");
             String authorName = request.getParameter("authorName");
             String priceValue = request.getParameter("price");
 
@@ -61,7 +61,7 @@ public class SaveDataServlet extends HttpServlet {
 
             // Add the employee details to the "employee" element
             Element nameElement = doc.createElement("Name");
-            nameElement.appendChild(doc.createTextNode(employeeName));
+            nameElement.appendChild(doc.createTextNode(bookName));
             employeeElement.appendChild(nameElement);
 
             Element authorNameElement = doc.createElement("AuthorName");

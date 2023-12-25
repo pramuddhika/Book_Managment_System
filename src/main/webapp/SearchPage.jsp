@@ -6,9 +6,9 @@
 <div class="container mt-4">
     <form action="SearchServlet" method="post" onsubmit="return validateSearchForm()">
         <div class="mb-3">
-            <label for="employeeName">Name:</label>
-            <input type="text" class="form-control" id="employeeName" name="employeeName">
-            <div id="employeeNameError" class="text-danger"></div>
+            <label for="bookName">Name:</label>
+            <input type="text" class="form-control" id="bookName" name="bookName">
+            <div id="bookNameError" class="text-danger"></div>
         </div>
         <button class="btn btn-primary" type="submit">Search Book</button>
     </form>
@@ -74,10 +74,10 @@
         // Reset error message
         document.getElementById("employeeNameError").innerHTML = "";
 
-        // Validate employeeName
-        var employeeName = document.getElementById("employeeName").value;
-        if (employeeName.trim() === "") {
-            document.getElementById("employeeNameError").innerHTML = "Name is required.";
+        // Validate bookName
+        var bookName = document.getElementById("bookeName").value;
+        if (bookName.trim() === "") {
+            document.getElementById("bookNameError").innerHTML = "Name is required.";
             isValid = false;
         }
 

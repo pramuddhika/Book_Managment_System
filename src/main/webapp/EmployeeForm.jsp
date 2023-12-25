@@ -9,9 +9,9 @@
 
     <form action="SaveDataServlet" method="post" onsubmit="return validateForm()">
         <div class="mb-3">
-            <label for="employeeName" class="form-label">Name:</label>
-            <input type="text" class="form-control" id="employeeName" name="employeeName" required>
-            <div id="employeeNameError" class="text-danger"></div>
+            <label for="bookName" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="bookName" name="bookName" required>
+            <div id="bookNameError" class="text-danger"></div>
         </div>
 
         <div class="mb-3">
@@ -54,14 +54,14 @@
         var isValid = true;
 
         // Reset error messages
-        document.getElementById("employeeNameError").innerHTML = "";
+        document.getElementById("bookNameError").innerHTML = "";
         document.getElementById("authorNameError").innerHTML = "";
         document.getElementById("priceError").innerHTML = "";
 
-        // Validate employeeName
-        var employeeName = document.getElementById("employeeName").value;
-        if (employeeName.trim() === "") {
-            document.getElementById("employeeNameError").innerHTML = "Name is required.";
+        // Validate bookName
+        var bookName = document.getElementById("bookName").value;
+        if (bookName.trim() === "") {
+            document.getElementById("bookNameError").innerHTML = "Name is required.";
             isValid = false;
         }
 
