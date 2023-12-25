@@ -13,16 +13,14 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
-@WebServlet("/DeleteEmployeeServlet")
-public class DeleteEmployeeServlet extends HttpServlet {
+@WebServlet("/EditBookServlet")
+public class EditBookServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get the employee ID to be deleted
+// Get the employee ID from the request parameter
         String employeeId = request.getParameter("employeeId");
 
         // Parse the XML file
@@ -31,7 +29,7 @@ public class DeleteEmployeeServlet extends HttpServlet {
         try {
             docBuilder = docFactory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            throw new RuntimeException(e);
+            throw new ServletException(e);
         }
 
         // Replace the hardcoded file path with the correct path to your XML file
@@ -40,7 +38,7 @@ public class DeleteEmployeeServlet extends HttpServlet {
         try {
             doc = docBuilder.parse(new File(filePath));
         } catch (SAXException e) {
-            throw new RuntimeException(e);
+            throw new ServletException(e);
         }
 
         // Find the employee element with the matching ID
@@ -56,30 +54,17 @@ public class DeleteEmployeeServlet extends HttpServlet {
 
         // Check if the employee was found
         if (employeeElement != null) {
-            // Remove the employee element from the XML file
-            doc.getDocumentElement().removeChild(employeeElement);
+            // Store the employee details in a request attribute
+            request.setAttribute("employee", employeeElement);
 
-            // Save the updated XML file
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = null;
-            try {
-                transformer = transformerFactory.newTransformer();
-            } catch (TransformerConfigurationException e) {
-                throw new RuntimeException(e);
-            }
-            DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File(filePath));
-            try {
-                transformer.transform(source, result);
-            } catch (TransformerException e) {
-                throw new RuntimeException(e);
-            }
-
-            // Redirect the user back to the EmployeeData.jsp page
-            response.sendRedirect("http://localhost:8090/demo7_war_exploded/EmployeeDataServlet");
+            // Forward the request to the EditEmployee.jsp page
+            request.getRequestDispatcher("EditEmployee.jsp").forward(request, response);
         } else {
             // Handle the case where the employee with the specified ID was not found
             response.sendRedirect("EmployeeData.jsp?error=EmployeeNotFound");
-        }
+        }    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }

@@ -42,11 +42,11 @@
                 <td><%= employee.getAuthorName() %></td>
                 <td><%= employee.getPriceValue() %></td>
                 <td>
-                    <form action="EditEmployeeServlet" method="post" style="display: inline-block;">
+                    <form action="EditBookServlet" method="post" style="display: inline-block;">
                         <input type="hidden" name="employeeId" value="<%= employee.getId() %>">
                         <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                     </form>
-                    <form action="DeleteEmployeeServlet" method="post" style="display: inline-block;">
+                    <form action="DeleteBookServlet" method="post" style="display: inline-block;">
                         <input type="hidden" name="employeeId" value="<%= employee.getId() %>">
                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
